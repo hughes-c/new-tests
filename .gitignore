@@ -33,4 +33,7 @@
 
 # Output Files
 *.out
-
+*.dot
+*.csv
+*_cuobjdump*
+*.ptx
