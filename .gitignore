@@ -32,6 +32,7 @@
 *.app
 
 # Output Files
+*.pdf
 *.out
 *.dot
 *.csv
