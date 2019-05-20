@@ -35,5 +35,7 @@
 *.out
 *.dot
 *.csv
-*_cuobjdump*
 *.ptx
+*_cuobjdump*
+*_app_cuda*
+
