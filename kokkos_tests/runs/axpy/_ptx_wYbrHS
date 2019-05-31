@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+
+.version 5.0
+.target sm_61
+.address_size 64
+
+.global .align 8 .b8 _ZN6Kokkos4Impl25g_device_cuda_lock_arraysE[24];
+
+

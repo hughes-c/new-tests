@@ -1,0 +1,73 @@
+
+
+
+
+
+
+
+
+.version 5.0
+.target sm_61
+.address_size 64
+
+
+.const .align 8 .b8 kokkos_impl_cuda_constant_memory_buffer[32768];
+.global .align 8 .b8 _ZN6Kokkos4Impl25g_device_cuda_lock_arraysE[24];
+
+.visible .entry _ZN6Kokkos76_GLOBAL__N__52_tmpxft_00005966_00000000_7_Kokkos_Cuda_Locks_cpp1_ii_915ea79329init_lock_array_kernel_atomicEv(
+
+)
+{
+.reg .pred %p<2>;
+.reg .b32 %r<6>;
+.reg .b64 %rd<5>;
+
+
+mov.u32 %r2, %ctaid.x;
+mov.u32 %r3, %ntid.x;
+mov.u32 %r4, %tid.x;
+mad.lo.s32 %r1, %r3, %r2, %r4;
+setp.gt.u32	%p1, %r1, 131071;
+@%p1 bra BB0_2;
+
+ld.global.u64 %rd1, [_ZN6Kokkos4Impl25g_device_cuda_lock_arraysE];
+cvta.to.global.u64 %rd2, %rd1;
+mul.wide.u32 %rd3, %r1, 4;
+add.s64 %rd4, %rd2, %rd3;
+mov.u32 %r5, 0;
+st.global.u32 [%rd4], %r5;
+
+BB0_2:
+ret;
+}
+
+
+.visible .entry _ZN6Kokkos76_GLOBAL__N__52_tmpxft_00005966_00000000_7_Kokkos_Cuda_Locks_cpp1_ii_915ea79331init_lock_array_kernel_threadidEi(
+.param .u32 _ZN6Kokkos76_GLOBAL__N__52_tmpxft_00005966_00000000_7_Kokkos_Cuda_Locks_cpp1_ii_915ea79331init_lock_array_kernel_threadidEi_param_0
+)
+{
+.reg .pred %p<2>;
+.reg .b32 %r<7>;
+.reg .b64 %rd<5>;
+
+
+ld.param.u32 %r2, [_ZN6Kokkos76_GLOBAL__N__52_tmpxft_00005966_00000000_7_Kokkos_Cuda_Locks_cpp1_ii_915ea79331init_lock_array_kernel_threadidEi_param_0];
+mov.u32 %r3, %ctaid.x;
+mov.u32 %r4, %ntid.x;
+mov.u32 %r5, %tid.x;
+mad.lo.s32 %r1, %r4, %r3, %r5;
+setp.ge.u32	%p1, %r1, %r2;
+@%p1 bra BB1_2;
+
+ld.global.u64 %rd1, [_ZN6Kokkos4Impl25g_device_cuda_lock_arraysE+8];
+cvta.to.global.u64 %rd2, %rd1;
+mul.wide.u32 %rd3, %r1, 4;
+add.s64 %rd4, %rd2, %rd3;
+mov.u32 %r6, 0;
+st.global.u32 [%rd4], %r6;
+
+BB1_2:
+ret;
+}
+
+
