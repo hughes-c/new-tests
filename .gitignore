@@ -40,3 +40,6 @@
 *_cuobjdump*
 *_app_cuda*
 
+# User
+KokkosKernels_UnitTest_Cuda
+
