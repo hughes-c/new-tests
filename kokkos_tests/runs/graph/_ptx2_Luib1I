@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+.version 5.0
+.target sm_61
+.address_size 64
+
+.global .align 8 .b8 _ZTVSt9basic_iosIcSt11char_traitsIcEE[32];
+.global .align 8 .b8 _ZTTSi[8];
+.global .align 8 .b8 _ZTTSo[8];
+.global .align 8 .b8 _ZTTSd[8];
+.global .align 8 .b8 _ZTVSt15basic_streambufIcSt11char_traitsIcEE[128];
+.global .align 8 .b8 _ZTVSt15basic_stringbufIcSt11char_traitsIcESaIcEE[128];
+.global .align 8 .b8 _ZTTSt18basic_stringstreamIcSt11char_traitsIcESaIcEE[8];
+.global .align 8 .b8 _ZTVN7testing8internal26ThreadLocalValueHolderBaseE[32];
+.global .align 8 .b8 _ZTVN10__cxxabiv117__class_type_infoE[88];
+.global .align 8 .b8 _ZTVN10__cxxabiv120__si_class_type_infoE[88];
+.global .align 8 .b8 _ZTVN7testing8internal9DeathTestE[64];
+.global .align 8 .b8 _ZTVN7testing8internal16DeathTestFactoryE[40];
+.global .align 8 .b8 _ZTVN7testing31TestPartResultReporterInterfaceE[40];
+.global .align 8 .b8 _ZTVN7testing8internal24HasNewFatalFailureHelperE[40];
+.global .align 8 .b8 _ZTVN7testing4TestE[64];
+.global .align 8 .b8 _ZTVN7testing8TestCaseE[32];
+.global .align 8 .b8 _ZTVN7testing17TestEventListenerE[136];
+.global .align 8 .b8 _ZTVN7testing22EmptyTestEventListenerE[136];
+.global .align 8 .b8 _ZTVN7testing8UnitTestE[32];
+.global .align 8 .b8 _ZTVN7testing8internal27OsStackTraceGetterInterfaceE[48];
+.global .align 8 .b8 _ZTVN7testing8internal18OsStackTraceGetterE[48];
+.global .align 8 .b8 _ZTVN7testing8internal12UnitTestImplE[32];
+.global .align 8 .b8 _ZTVN7testing8internal17StreamingListener20AbstractSocketWriterE[48];
+.global .align 8 .b8 _ZTVN7testing8internal17StreamingListener12SocketWriterE[48];
+.global .align 8 .b8 _ZTVN7testing8internal17StreamingListenerE[136];
+.global .align 8 .b8 _ZTVN7testing32ScopedFakeTestPartResultReporterE[40];
+.global .align 8 .b8 _ZTVN7testing8internal35DefaultGlobalTestPartResultReporterE[40];
+.global .align 8 .b8 _ZTVN7testing8internal38DefaultPerThreadTestPartResultReporterE[40];
+.global .align 8 .b8 _ZTVN7testing8internal26GoogleTestFailureExceptionE[40];
+.global .align 8 .b8 _ZTVN7testing8internal27PrettyUnitTestResultPrinterE[136];
+.global .align 8 .b8 _ZTVN7testing8internal17TestEventRepeaterE[136];
+.global .align 8 .b8 _ZTVN7testing8internal24XmlUnitTestResultPrinterE[136];
+.global .align 8 .b8 _ZTVN7testing8internal23DefaultDeathTestFactoryE[40];
+.global .align 8 .b8 _ZTVN7testing8internal13DeathTestImplE[64];
+.global .align 8 .b8 _ZTVN7testing8internal16ForkingDeathTestE[64];
+.global .align 8 .b8 _ZTVN7testing8internal15NoExecDeathTestE[64];
+.global .align 8 .b8 _ZTVN7testing8internal13ExecDeathTestE[64];
+.global .align 8 .b8 _ZTVN7testing8internal11ThreadLocalIPNS_31TestPartResultReporterInterfaceEE11ValueHolderE[32];
+.global .align 8 .b8 _ZTVN7testing8internal11ThreadLocalISt6vectorINS0_9TraceInfoESaIS3_EEE11ValueHolderE[32];
+
+

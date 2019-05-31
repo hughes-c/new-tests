@@ -1,0 +1,21 @@
+
+
+
+
+
+
+
+
+.version 5.0
+.target sm_61
+.address_size 64
+
+.const .align 8 .b8 kokkos_impl_cuda_constant_memory_buffer[32768];
+.global .align 8 .b8 _ZTVSt9basic_iosIcSt11char_traitsIcEE[32];
+.global .align 8 .b8 _ZTTSo[8];
+.global .align 8 .b8 _ZTVSt15basic_streambufIcSt11char_traitsIcEE[128];
+.global .align 8 .b8 _ZTVSt15basic_stringbufIcSt11char_traitsIcESaIcEE[128];
+.global .align 8 .b8 _ZTTSt19basic_ostringstreamIcSt11char_traitsIcESaIcEE[8];
+.global .align 8 .b8 _ZN6Kokkos4Impl25g_device_cuda_lock_arraysE[24];
+
+

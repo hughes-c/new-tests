@@ -1,0 +1,367 @@
+
+
+
+
+
+
+
+
+.version 5.0
+.target sm_61
+.address_size 64
+
+.const .align 8 .b8 kokkos_impl_cuda_constant_memory_buffer[32768];
+.global .align 8 .b8 _ZTVN10__cxxabiv117__class_type_infoE[8];
+.global .align 8 .b8 _ZN6Kokkos4Impl25g_device_cuda_lock_arraysE[24];
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<3>;
+.reg .b64 %rd<12>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+80];
+ld.param.u64 %rd6, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+32];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.s32	%p1, %r22, %r15;
+@%p1 bra BB0_3;
+
+cvta.to.global.u64 %rd1, %rd6;
+sub.s32 %r4, %r15, %r1;
+
+BB0_2:
+mul.wide.s32 %rd9, %r22, 8;
+add.s64 %rd10, %rd1, %rd9;
+mov.u64 %rd11, 0;
+st.global.u64 [%rd10], %rd11;
+add.s32 %r21, %r22, %r1;
+setp.lt.s32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.s32	%p3, %r22, %r15;
+@%p3 bra BB0_2;
+
+BB0_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<6>;
+.reg .b64 %rd<11>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+80];
+ld.param.f64 %fd3, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+56];
+ld.param.u64 %rd6, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+32];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.s32	%p1, %r22, %r15;
+@%p1 bra BB1_3;
+
+cvta.to.global.u64 %rd1, %rd6;
+sub.s32 %r4, %r15, %r1;
+
+BB1_2:
+mul.wide.s32 %rd9, %r22, 8;
+add.s64 %rd10, %rd1, %rd9;
+ld.global.f64 %fd4, [%rd10];
+mul.f64 %fd5, %fd3, %fd4;
+st.global.f64 [%rd10], %fd5;
+add.s32 %r21, %r22, %r1;
+setp.lt.s32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.s32	%p3, %r22, %r15;
+@%p3 bra BB1_2;
+
+BB1_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<6>;
+.reg .b64 %rd<13>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+80];
+ld.param.f64 %fd2, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+48];
+ld.param.u64 %rd7, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+32];
+ld.param.u64 %rd4, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+8];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.s32	%p1, %r22, %r15;
+@%p1 bra BB2_3;
+
+cvta.to.global.u64 %rd1, %rd4;
+cvta.to.global.u64 %rd2, %rd7;
+sub.s32 %r4, %r15, %r1;
+
+BB2_2:
+mul.wide.s32 %rd10, %r22, 8;
+add.s64 %rd11, %rd1, %rd10;
+ld.global.f64 %fd4, [%rd11];
+mul.f64 %fd5, %fd2, %fd4;
+add.s64 %rd12, %rd2, %rd10;
+st.global.f64 [%rd12], %fd5;
+add.s32 %r21, %r22, %r1;
+setp.lt.s32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.s32	%p3, %r22, %r15;
+@%p3 bra BB2_2;
+
+BB2_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<9>;
+.reg .b64 %rd<13>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+80];
+ld.param.f64 %fd4, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+56];
+ld.param.f64 %fd3, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+48];
+ld.param.u64 %rd7, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+32];
+ld.param.u64 %rd4, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EiEENS_11RangePolicyIJSB_iEEESB_EEEEvT__param_0+8];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.s32	%p1, %r22, %r15;
+@%p1 bra BB3_3;
+
+cvta.to.global.u64 %rd1, %rd4;
+cvta.to.global.u64 %rd2, %rd7;
+sub.s32 %r4, %r15, %r1;
+
+BB3_2:
+mul.wide.s32 %rd10, %r22, 8;
+add.s64 %rd11, %rd1, %rd10;
+ld.global.f64 %fd5, [%rd11];
+add.s64 %rd12, %rd2, %rd10;
+ld.global.f64 %fd6, [%rd12];
+mul.f64 %fd7, %fd4, %fd6;
+fma.rn.f64 %fd8, %fd3, %fd5, %fd7;
+st.global.f64 [%rd12], %fd8;
+add.s32 %r21, %r22, %r1;
+setp.lt.s32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.s32	%p3, %r22, %r15;
+@%p3 bra BB3_2;
+
+BB3_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<3>;
+.reg .b64 %rd<12>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+80];
+ld.param.u64 %rd6, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+32];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.u32	%p1, %r22, %r15;
+@%p1 bra BB4_3;
+
+cvta.to.global.u64 %rd1, %rd6;
+sub.s32 %r4, %r15, %r1;
+
+BB4_2:
+mul.wide.u32 %rd9, %r22, 8;
+add.s64 %rd10, %rd1, %rd9;
+mov.u64 %rd11, 0;
+st.global.u64 [%rd10], %rd11;
+add.s32 %r21, %r22, %r1;
+setp.lt.u32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.u32	%p3, %r22, %r15;
+@%p3 bra BB4_2;
+
+BB4_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<6>;
+.reg .b64 %rd<11>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+80];
+ld.param.f64 %fd3, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+56];
+ld.param.u64 %rd6, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi0ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+32];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.u32	%p1, %r22, %r15;
+@%p1 bra BB5_3;
+
+cvta.to.global.u64 %rd1, %rd6;
+sub.s32 %r4, %r15, %r1;
+
+BB5_2:
+mul.wide.u32 %rd9, %r22, 8;
+add.s64 %rd10, %rd1, %rd9;
+ld.global.f64 %fd4, [%rd10];
+mul.f64 %fd5, %fd3, %fd4;
+st.global.f64 [%rd10], %fd5;
+add.s32 %r21, %r22, %r1;
+setp.lt.u32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.u32	%p3, %r22, %r15;
+@%p3 bra BB5_2;
+
+BB5_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<6>;
+.reg .b64 %rd<13>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+80];
+ld.param.f64 %fd2, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+48];
+ld.param.u64 %rd7, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+32];
+ld.param.u64 %rd4, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi0EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+8];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.u32	%p1, %r22, %r15;
+@%p1 bra BB6_3;
+
+cvta.to.global.u64 %rd1, %rd4;
+cvta.to.global.u64 %rd2, %rd7;
+sub.s32 %r4, %r15, %r1;
+
+BB6_2:
+mul.wide.u32 %rd10, %r22, 8;
+add.s64 %rd11, %rd1, %rd10;
+ld.global.f64 %fd4, [%rd11];
+mul.f64 %fd5, %fd2, %fd4;
+add.s64 %rd12, %rd2, %rd10;
+st.global.f64 [%rd12], %fd5;
+add.s32 %r21, %r22, %r1;
+setp.lt.u32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.u32	%p3, %r22, %r15;
+@%p3 bra BB6_2;
+
+BB6_3:
+ret;
+}
+
+.entry _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT_(
+.param .align 8 .b8 _ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0[96]
+)
+{
+.reg .pred %p<4>;
+.reg .b32 %r<23>;
+.reg .f64 %fd<9>;
+.reg .b64 %rd<13>;
+
+
+ld.param.v2.u32 {%r14, %r15}, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+80];
+ld.param.f64 %fd4, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+56];
+ld.param.f64 %fd3, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+48];
+ld.param.u64 %rd7, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+32];
+ld.param.u64 %rd4, [_ZN6Kokkos4Impl33cuda_parallel_launch_local_memoryINS0_11ParallelForIN10KokkosBlas4Impl13Axpby_FunctorIdNS_4ViewIPKdJNS_10LayoutLeftENS_6DeviceINS_4CudaENS_9CudaSpaceEEENS_12MemoryTraitsILj1EEEEEEdNS6_IPdJS9_SD_SF_EEELi2ELi2EjEENS_11RangePolicyIJSB_jEEESB_EEEEvT__param_0+8];
+mov.u32 %r16, %nctaid.x;
+mov.u32 %r17, %ntid.y;
+mul.lo.s32 %r1, %r16, %r17;
+mov.u32 %r18, %tid.y;
+add.s32 %r19, %r18, %r14;
+mov.u32 %r20, %ctaid.x;
+mad.lo.s32 %r22, %r20, %r17, %r19;
+setp.ge.u32	%p1, %r22, %r15;
+@%p1 bra BB7_3;
+
+cvta.to.global.u64 %rd1, %rd4;
+cvta.to.global.u64 %rd2, %rd7;
+sub.s32 %r4, %r15, %r1;
+
+BB7_2:
+mul.wide.u32 %rd10, %r22, 8;
+add.s64 %rd11, %rd1, %rd10;
+ld.global.f64 %fd5, [%rd11];
+add.s64 %rd12, %rd2, %rd10;
+ld.global.f64 %fd6, [%rd12];
+mul.f64 %fd7, %fd4, %fd6;
+fma.rn.f64 %fd8, %fd3, %fd5, %fd7;
+st.global.f64 [%rd12], %fd8;
+add.s32 %r21, %r22, %r1;
+setp.lt.u32	%p2, %r22, %r4;
+selp.b32	%r22, %r21, %r15, %p2;
+setp.lt.u32	%p3, %r22, %r15;
+@%p3 bra BB7_2;
+
+BB7_3:
+ret;
+}
+
+
