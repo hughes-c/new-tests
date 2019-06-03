@@ -39,7 +39,9 @@
 *.ptx
 *_cuobjdump*
 *_app_cuda*
+*_ptx*
 
 # User
-KokkosKernels_UnitTest_Cuda
+KokkosKernels_UnitTest_Cuda*
+
 
